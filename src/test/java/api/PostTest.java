@@ -44,6 +44,7 @@ public class PostTest extends BaseTest {
                 .body("userId", equalTo(1))
                 .body("id", notNullValue());
     }
+
     @Test
     public void deveValidarEstruturaDoPostRetornado() {
         given()
@@ -56,5 +57,30 @@ public class PostTest extends BaseTest {
                 .body("userId", notNullValue())
                 .body("title", notNullValue())
                 .body("body", notNullValue());
+    }
+
+    @Test
+    public void deveAtualizarPost() throws Exception {
+
+        String body = """
+        {
+          "id": 1,
+          "title": "Post atualizado",
+          "body": "Conteudo atualizado",
+          "userId": 1
+        }
+        """;
+
+        given()
+                .contentType(ContentType.JSON)
+                .body(body)
+                .when()
+                .put("/posts/1")
+                .then()
+                .statusCode(200)
+                .contentType(ContentType.JSON)
+                .body("title", equalTo("Post atualizado"))
+                .body("body", equalTo("Conteudo atualizado"))
+                .body("userId", equalTo(1));
     }
 }
