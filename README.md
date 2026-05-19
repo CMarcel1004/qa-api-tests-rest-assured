@@ -1,5 +1,6 @@
 # QA API Tests com Rest Assured
 
+[![API Tests](https://github.com/CMarcel1004/qa-api-tests-rest-assured/actions/workflows/api-tests.yml/badge.svg)](https://github.com/CMarcel1004/qa-api-tests-rest-assured/actions/workflows/api-tests.yml)
 
 Projeto desenvolvido com foco em automação de testes de API, aplicando boas práticas de organização, reutilização de código e validação de cenários positivos e negativos.
 
